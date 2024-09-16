@@ -1,0 +1,2586 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title> &#8212; EDA Pymes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EDA';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo2.png" class="logo__image only-light" alt="EDA Pymes - Home"/>
+    <script>document.write(`<img src="_static/logo2.png" class="logo__image only-dark" alt="EDA Pymes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"></a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEDA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/EDA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-los-datos-de-pymes-superintendencia">Análisis Exploratorio de los Datos de Pymes Superintendencia</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelly-johana-beltran-henry-d-saenz-valverde">Kelly Johana Beltrán - Henry D. Saenz Valverde</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto-y-contextualizacion">Objetivo del proyecto y contextualización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-conjunto-de-datos">Librerías y Conjunto de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-faltantes">Análisis de datos faltantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccionamos-nuestra-variable-cobertura-de-dividendos">Inspeccionamos nuestra variable Cobertura de Dividendos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-variables">Descripción de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-categoricas">Variables Categóricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccion-de-prevalencias-en-empresas">Inspección de prevalencias en empresas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-cambio-por-sector">Análisis de cambio por sector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificamos-la-correlacion-categorica">Verificamos la correlación categórica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables Númericas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-asimetria-y-curtosis">Análisis de asimetría y curtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-microeconomicas">Variables microeconómicas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-exploratorio-de-los-datos-de-pymes-superintendencia">
+<h1>Análisis Exploratorio de los Datos de Pymes Superintendencia<a class="headerlink" href="#analisis-exploratorio-de-los-datos-de-pymes-superintendencia" title="Link to this heading">#</a></h1>
+<section id="kelly-johana-beltran-henry-d-saenz-valverde">
+<h2>Kelly Johana Beltrán - Henry D. Saenz Valverde<a class="headerlink" href="#kelly-johana-beltran-henry-d-saenz-valverde" title="Link to this heading">#</a></h2>
+</section>
+<section id="objetivo-del-proyecto-y-contextualizacion">
+<h2>Objetivo del proyecto y contextualización<a class="headerlink" href="#objetivo-del-proyecto-y-contextualizacion" title="Link to this heading">#</a></h2>
+<p>Se desarrollará una investigación que permita identificar, a través de un modelo estadístico o de Machine Learning, los factores macroeconómicos y microecónomicos que favorecieron al crecimiento y la liquidez de ciertas empresas catalogadas como medinas y pequeñas o de categoría PYMES en Colombia durante el período 2017 - 2023.</p>
+</section>
+<section id="librerias-y-conjunto-de-datos">
+<h2>Librerías y Conjunto de datos<a class="headerlink" href="#librerias-y-conjunto-de-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documento</span> <span class="o">=</span> <span class="s1">&#39;DataIndices.xlsx&#39;</span>  
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">documento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las variables que vamos a trabajar son:</p>
+<p><strong>NIT</strong> : Número de Identificación Tributaria de la empresa.<br />
+<strong>Fecha de Corte</strong> : Fecha en la que se realiza el análisis o el reporte.<br />
+<strong>Razón social de la sociedad</strong> :Nombre oficial de la empresa.<br />
+<strong>Clasificación Industrial Internacional Uniforme (CIIU)</strong> :Código de actividad económica según la CIIU.<br />
+<strong>Tipo societario</strong> :Forma legal de constitución de la empresa (e.g. S.A., SAS).<br />
+<strong>Dirección de notificación judicial registrada</strong> :Dirección de contacto legal registrada en la Cámara de Comercio.<br />
+<strong>Departamento de la dirección del domicilio</strong> :Departamento (región) de Colombia donde está ubicada la empresa.<br />
+<strong>Ciudad de la dirección del domicilio</strong> :Ciudad donde está ubicada la empresa.<br />
+<strong>IPC (Índice de Precios al Consumidor)</strong> :Índice que mide la evolución de los precios al consumidor en el país.<br />
+<strong>PIB (Producto Interno Bruto)</strong> :Valor total de los bienes y servicios producidos en el país.<br />
+<strong>DESEMPLEO</strong> :Tasa de desempleo en el país.<br />
+<strong>Flujo de Caja Operativo</strong> :Flujo de caja generado por las actividades operativas de la empresa.<br />
+<strong>CAPEX</strong>:Gastos de capital en activos fijos (Capital Expenditures).<br />
+<strong>Flujo de Caja Libre (FLC)</strong> :Efectivo disponible después de cubrir gastos operativos y CAPEX.<br />
+<strong>Razón Corriente</strong> :Relación entre los activos y pasivos corrientes de la empresa (medida de liquidez).
+<strong>Rotación Inventario Producto Terminado (días)</strong> :Tiempo promedio que un producto terminado permanece en inventario.<br />
+<strong>Rotación Cartera Días</strong> : Número de días que en promedio tarda la empresa en cobrar sus cuentas.<br />
+<strong>KTNO (Capital de Trabajo Neto Operativo)</strong> :Capital de trabajo neto disponible para las operaciones de la empresa.<br />
+<strong>ROA (Return on Assets)</strong> :Rendimiento sobre los activos de la empresa, mide la eficiencia del uso de activos.
+<strong>MargenAntesImpuestos</strong>: Margen de beneficio antes de impuestos.<br />
+<strong>EBIT (Earnings Before Interest and Taxes)</strong>: Beneficios antes de intereses e impuestos.<br />
+<strong>MargenEBIT</strong>: Margen de EBIT, relación entre EBIT y los ingresos totales.<br />
+<strong>UtilidadBruta</strong> : Diferencia entre ingresos netos y el costo de los bienes vendidos (sin impuestos).
+<strong>MargenBruto</strong> : Relación entre la utilidad bruta y los ingresos netos.                                                                                             <strong>RotacionActivoTotal</strong>: Mide la eficiencia con la que una empresa usa sus activos para generar ingresos.
+<strong>ROE (Return on Equity)</strong>: Rendimiento sobre el capital propio de la empresa.<br />
+<strong>RAAI</strong> : Resultado Antes de Ajustes e Impuestos.<br />
+<strong>RAP</strong>: Resultado Después de Ajustes e Impuestos.<br />
+<strong>NivelEndeudamiento</strong>: Relación entre el total de pasivos y el total de activos de la empresa.<br />
+<strong>CoberturaIntereses</strong>: Capacidad de la empresa para cubrir los pagos de intereses con su EBIT.<br />
+<strong>ServicioDeuda</strong>: Pagos asociados al servicio de la deuda (capital e intereses).<br />
+<strong>FLC</strong>: Flujo de Caja Libre, efectivo disponible después de CAPEX y gastos operativos.<br />
+<strong>CoberturaServicioDeuda</strong>: Capacidad para cubrir el servicio de la deuda con el flujo de caja operativo.<br />
+<strong>FDC (Flujo de Caja de Dividendos)</strong>: Flujo de caja destinado a los dividendos de los accionistas.<br />
+<strong>CoberturaDividendos</strong>: Capacidad para cubrir los dividendos con el flujo de caja libre.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-overview">
+<h1>Data overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h1>
+<p>El conjunto de datos posee 35 variables de interés de un total de 58380 observaciones correspondientes a cerca de 8.000 PYMES desde 2017 hasta 2023.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(58380, 35)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIT</th>
+      <th>Fecha de Corte</th>
+      <th>Razón social de la sociedad</th>
+      <th>Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)</th>
+      <th>Tipo societario</th>
+      <th>Dirección de notificación judicial registrada en Cámara de Comercio</th>
+      <th>Departamento de la dirección del domicilio</th>
+      <th>Ciudad de la dirección del domicilio</th>
+      <th>IPC</th>
+      <th>PIB</th>
+      <th>...</th>
+      <th>ROE</th>
+      <th>RAAI</th>
+      <th>RAP</th>
+      <th>NivelEndeudamiento</th>
+      <th>CoberturaIntereses</th>
+      <th>ServicioDeuda</th>
+      <th>FLC</th>
+      <th>CoberturaServicioDeuda</th>
+      <th>FDC</th>
+      <th>CoberturaDividendos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>800000268</td>
+      <td>2017-12-31</td>
+      <td>INVERSIONES SCHLEGEL DONADO S.A.S.</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CARRERA 53 82 115</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>7.69</td>
+      <td>209755.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.939199</td>
+      <td>74.614131</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>956092.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>800000268</td>
+      <td>2018-12-31</td>
+      <td>INVERSIONES SCHLEGEL DONADO S.A.S.</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CARRERA 53 82 115</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>-1.16</td>
+      <td>225397.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.193762</td>
+      <td>80.746133</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>972379.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>800000268</td>
+      <td>2019-12-31</td>
+      <td>INVERSIONES SCHLEGEL DONADO S.A.S.</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CARRERA 53 82 115</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>2.82</td>
+      <td>241211.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.811973</td>
+      <td>79.218505</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1041906.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>800000268</td>
+      <td>2020-12-31</td>
+      <td>INVERSIONES SCHLEGEL DONADO S.A.S.</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CARRERA 53 82 115</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>4.96</td>
+      <td>242115.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.781703</td>
+      <td>79.086947</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1044607.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>800000268</td>
+      <td>2021-12-31</td>
+      <td>INVERSIONES SCHLEGEL DONADO S.A.S.</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CARRERA 53 82 115</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>3.98</td>
+      <td>263015.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.374080</td>
+      <td>57.878423</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>3028153.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>800003215</td>
+      <td>2021-12-31</td>
+      <td>VJ CARDIOSISTEMAS SAS</td>
+      <td>G4645 - Comercio al por mayor de productos far...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CALLE 106 A 45 A 35</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA D.C.</td>
+      <td>3.68</td>
+      <td>216636.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.711328</td>
+      <td>41.565853</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>10382927.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>800003215</td>
+      <td>2022-12-31</td>
+      <td>VJ CARDIOSISTEMAS SAS</td>
+      <td>G4645 - Comercio al por mayor de productos far...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CALLE 106 A 45 A 35</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA D.C.</td>
+      <td>6.94</td>
+      <td>61953.13</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.698593</td>
+      <td>41.127753</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>11450121.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>800003215</td>
+      <td>2023-12-31</td>
+      <td>VJ CARDIOSISTEMAS SAS</td>
+      <td>G4645 - Comercio al por mayor de productos far...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CALLE 106 A 45 A 35</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA D.C.</td>
+      <td>9.26</td>
+      <td>295710.60</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.619339</td>
+      <td>38.246424</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>13835431.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>800003367</td>
+      <td>2017-12-31</td>
+      <td>SUMINISTROS INDUSTRIALESY ASESORIAS S.A.S.</td>
+      <td>G4774 - Comercio al por menor de otros product...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>VIA 40 # 84 -87</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>6.34</td>
+      <td>163052.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.596917</td>
+      <td>61.492808</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4164941.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>800003367</td>
+      <td>2018-12-31</td>
+      <td>SUMINISTROS INDUSTRIALESY ASESORIAS S.A.S.</td>
+      <td>G4774 - Comercio al por menor de otros product...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>VIA 40 # 84 -87</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA-ATLANTICO</td>
+      <td>4.33</td>
+      <td>173708.00</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.691195</td>
+      <td>62.841788</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>3905677.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 35 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;NIT&#39;, &#39;Fecha de Corte&#39;, &#39;Razón social de la sociedad&#39;,
+       &#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;,
+       &#39;Tipo societario&#39;,
+       &#39;Dirección de notificación judicial registrada en Cámara de Comercio&#39;,
+       &#39;Departamento de la dirección del domicilio&#39;,
+       &#39;Ciudad de la dirección del domicilio&#39;, &#39;IPC&#39;, &#39;PIB&#39;, &#39;DESEMPLEO&#39;,
+       &#39;Flujo de Caja Operativo&#39;, &#39;CAPEX&#39;, &#39;Flujo de Caja Libre (FLC)&#39;,
+       &#39;Razón Corriente&#39;, &#39;Rotación Inventario Producto Terminado (días)&#39;,
+       &#39;Rotacion Cartera Dias&#39;, &#39;KTNO&#39;, &#39;ROA&#39;, &#39;MargenAntesImpuestos&#39;, &#39;EBIT&#39;,
+       &#39;MargenEBIT&#39;, &#39;UtilidadBruta&#39;, &#39;MargenBruto&#39;, &#39;RotacionActivoTotal&#39;,
+       &#39;ROE&#39;, &#39;RAAI&#39;, &#39;RAP&#39;, &#39;NivelEndeudamiento&#39;, &#39;CoberturaIntereses&#39;,
+       &#39;ServicioDeuda&#39;, &#39;FLC&#39;, &#39;CoberturaServicioDeuda&#39;, &#39;FDC&#39;,
+       &#39;CoberturaDividendos&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 58380 entries, 0 to 58379
+Data columns (total 35 columns):
+ #   Column                                                                Non-Null Count  Dtype  
+---  ------                                                                --------------  -----  
+ 0   NIT                                                                   58380 non-null  int64  
+ 1   Fecha de Corte                                                        58380 non-null  object 
+ 2   Razón social de la sociedad                                           58378 non-null  object 
+ 3   Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)  58380 non-null  object 
+ 4   Tipo societario                                                       58380 non-null  object 
+ 5   Dirección de notificación judicial registrada en Cámara de Comercio   58380 non-null  object 
+ 6   Departamento de la dirección del domicilio                            58380 non-null  object 
+ 7   Ciudad de la dirección del domicilio                                  58380 non-null  object 
+ 8   IPC                                                                   58380 non-null  float64
+ 9   PIB                                                                   58380 non-null  float64
+ 10  DESEMPLEO                                                             58380 non-null  float64
+ 11  Flujo de Caja Operativo                                               58380 non-null  float64
+ 12  CAPEX                                                                 58380 non-null  int64  
+ 13  Flujo de Caja Libre (FLC)                                             58380 non-null  float64
+ 14  Razón Corriente                                                       58380 non-null  float64
+ 15  Rotación Inventario Producto Terminado (días)                         58380 non-null  float64
+ 16  Rotacion Cartera Dias                                                 58380 non-null  float64
+ 17  KTNO                                                                  58380 non-null  float64
+ 18  ROA                                                                   58380 non-null  float64
+ 19  MargenAntesImpuestos                                                  58380 non-null  float64
+ 20  EBIT                                                                  58380 non-null  int64  
+ 21  MargenEBIT                                                            58380 non-null  float64
+ 22  UtilidadBruta                                                         58380 non-null  float64
+ 23  MargenBruto                                                           58380 non-null  float64
+ 24  RotacionActivoTotal                                                   58380 non-null  float64
+ 25  ROE                                                                   58380 non-null  float64
+ 26  RAAI                                                                  58380 non-null  float64
+ 27  RAP                                                                   58380 non-null  float64
+ 28  NivelEndeudamiento                                                    58380 non-null  float64
+ 29  CoberturaIntereses                                                    58380 non-null  float64
+ 30  ServicioDeuda                                                         58380 non-null  int64  
+ 31  FLC                                                                   58380 non-null  float64
+ 32  CoberturaServicioDeuda                                                58380 non-null  float64
+ 33  FDC                                                                   58380 non-null  int64  
+ 34  CoberturaDividendos                                                   52590 non-null  float64
+dtypes: float64(23), int64(5), object(7)
+memory usage: 15.6+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adicionamos una columna para identificar el año de análisis en lugar de identificar la fecha por año de corte</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Fecha de Corte&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Fecha de Corte&#39;</span><span class="p">],</span> <span class="n">errors</span> <span class="o">=</span> <span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Fecha de Corte&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Fecha de Corte&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Fecha de Corte   Año
+0     2017-12-31  2017
+1     2018-12-31  2018
+2     2019-12-31  2019
+3     2020-12-31  2020
+4     2021-12-31  2021
+</pre></div>
+</div>
+</div>
+</div>
+<section id="analisis-de-datos-faltantes">
+<h2>Análisis de datos faltantes<a class="headerlink" href="#analisis-de-datos-faltantes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_faltantes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">datos_faltantes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIT                                                                        0
+Fecha de Corte                                                             0
+Razón social de la sociedad                                                2
+Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)       0
+Tipo societario                                                            0
+Dirección de notificación judicial registrada en Cámara de Comercio        0
+Departamento de la dirección del domicilio                                 0
+Ciudad de la dirección del domicilio                                       0
+IPC                                                                        0
+PIB                                                                        0
+DESEMPLEO                                                                  0
+Flujo de Caja Operativo                                                    0
+CAPEX                                                                      0
+Flujo de Caja Libre (FLC)                                                  0
+Razón Corriente                                                            0
+Rotación Inventario Producto Terminado (días)                              0
+Rotacion Cartera Dias                                                      0
+KTNO                                                                       0
+ROA                                                                        0
+MargenAntesImpuestos                                                       0
+EBIT                                                                       0
+MargenEBIT                                                                 0
+UtilidadBruta                                                              0
+MargenBruto                                                                0
+RotacionActivoTotal                                                        0
+ROE                                                                        0
+RAAI                                                                       0
+RAP                                                                        0
+NivelEndeudamiento                                                         0
+CoberturaIntereses                                                         0
+ServicioDeuda                                                              0
+FLC                                                                        0
+CoberturaServicioDeuda                                                     0
+FDC                                                                        0
+CoberturaDividendos                                                     5790
+Año                                                                        0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Columna&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">&#39;Datos faltantes&#39;</span><span class="p">:</span> <span class="n">datos_faltantes</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">faltantes</span><span class="p">[</span><span class="s1">&#39;Columna&#39;</span><span class="p">],</span> <span class="n">faltantes</span><span class="p">[</span><span class="s1">&#39;Datos faltantes&#39;</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de datos faltantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Columna&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bd89eb533c33d23380887e2b60e7d41ff21041d6ec4c001093be4f027666a852.png" src="_images/bd89eb533c33d23380887e2b60e7d41ff21041d6ec4c001093be4f027666a852.png" />
+</div>
+</div>
+<section id="inspeccionamos-nuestra-variable-cobertura-de-dividendos">
+<h3>Inspeccionamos nuestra variable Cobertura de Dividendos<a class="headerlink" href="#inspeccionamos-nuestra-variable-cobertura-de-dividendos" title="Link to this heading">#</a></h3>
+<p>Datos faltantes por año</p>
+<p>Inspeccionamos los datos faltantes por año para la variable Cobertura de dividendos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_por_años</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">faltantes_por_años</span><span class="p">[[</span><span class="s1">&#39;CoberturaDividendos&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      CoberturaDividendos
+Año                      
+2017                  823
+2018                  829
+2019                  826
+2020                  827
+2021                  833
+2022                  822
+2023                  830
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\KELLY\AppData\Local\Temp\ipykernel_22248\206079219.py:1: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  faltantes_por_años = data.groupby(&#39;Año&#39;).apply(lambda x: x.isnull().sum())
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_por_año</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)[</span><span class="s1">&#39;CoberturaDividendos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Cambiar el nombre de la columna para reflejar los datos faltantes</span>
+<span class="n">faltantes_por_año</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Datos_Faltantes&#39;</span><span class="p">]</span>
+
+<span class="c1"># Graficar los datos faltantes por año para la columna &#39;CoberturaDividendos&#39;</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">faltantes_por_año</span><span class="p">,</span>  <span class="c1"># DataFrame con el conteo de faltantes</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span>  <span class="c1"># Columna de años</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Datos_Faltantes&#39;</span><span class="p">,</span>  <span class="c1"># Columna con el conteo de datos faltantes</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de datos faltantes por año&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Datos_Faltantes&#39;</span><span class="p">:</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">},</span>  <span class="c1"># Etiquetas de los ejes</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Datos_Faltantes&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>  <span class="c1"># Mostrar los datos al pasar el cursor</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Datos_Faltantes&#39;</span>  <span class="c1"># Mostrar el valor directamente en las barras</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño para que sea más limpio</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cantidad de Cbertura de Dividendos Faltantes&#39;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> 
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.1</span>  <span class="c1"># Añadir espacio entre las barras</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Datos Faltantes por sector</p>
+<p>Inspeccionamos los datos faltantes por sector para la variable Cobertura de Dividendos con el objetivo de intuir cuales son los sectores que más falta de reporte en cobertura de dividendos presentan de manera reiterativa o si son las mismas empresas en los mismos sectores. En el análisis se descubre el siguiente top 10 de los sectores con más datos faltantes o reporte para la cobertura de dividendos:</p>
+<ul class="simple">
+<li><p>Actividades inmobiliarias</p></li>
+</ul>
+<ul class="simple">
+<li><p>Construcción de edificios</p></li>
+</ul>
+<ul class="simple">
+<li><p>Actividades de servicio financiero excepto seguros</p></li>
+</ul>
+<ul class="simple">
+<li><p>Actividades de administración empresarial</p></li>
+</ul>
+<ul class="simple">
+<li><p>Construcción de otras obras del sector civil</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_por_sector</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">faltantes_por_sector</span><span class="p">[[</span><span class="s1">&#39;CoberturaDividendos&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                    CoberturaDividendos
+Clasificación Industrial Internacional Uniforme...                     
+A0111 - Cultivo de cereales (excepto arroz), le...                    7
+A0112 - Cultivo de arroz                                              1
+A0113 - Cultivo de hortalizas, raíces y tubérculos                    0
+A0114 - Cultivo de tabaco                                             1
+A0115 - Cultivo de plantas textiles                                   0
+...                                                                 ...
+S9529 - Mantenimiento y reparación de otros efe...                    0
+S9601 - Lavado y limpieza, incluso la limpieza ...                    0
+S9602 - Peluquería y otros tratamientos de belleza                    0
+S9603 - Pompas fúnebres y actividades relacionadas                    7
+S9609 - Otras actividades de servicios personal...                   12
+
+[443 rows x 1 columns]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\KELLY\AppData\Local\Temp\ipykernel_22248\3063682511.py:1: DeprecationWarning:
+
+DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_por_sector</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">)[</span><span class="s1">&#39;CoberturaDividendos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Cambiar el nombre de la columna para reflejar los datos faltantes</span>
+<span class="n">faltantes_por_sector</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ordenar por la cantidad de datos faltantes y seleccionar el Top 10</span>
+<span class="n">top_10_faltantes</span> <span class="o">=</span> <span class="n">faltantes_por_sector</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Graficar los datos faltantes por sector (Top 10)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">top_10_faltantes</span><span class="p">,</span>  <span class="c1"># DataFrame con el top 10 de faltantes</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CIIU&#39;</span><span class="p">,</span>  <span class="c1"># Columna de sectores</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">,</span>  <span class="c1"># Columna con el conteo de datos faltantes</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 10 Sectores con Mayor Cantidad de Datos Faltantes en Cobertura de Dividendos&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">:</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">:</span> <span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">},</span>  <span class="c1"># Etiquetas de los ejes</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CIIU&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>  <span class="c1"># Mostrar los datos al pasar el cursor</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span>  <span class="c1"># Mostrar el valor directamente en las barras</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño para que sea más limpio</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cantidad de Cobertura de Dividendos Faltantes&#39;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.1</span>  <span class="c1"># Añadir espacio entre las barras</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>¿Se repiten los mismos sectores con falta de cobertura de dividendos a lo largo de los años? o ¿Hay alguna variación en el reporte de datos faltantes por sector (CIIU) a lo largo de los años?</p>
+<p>Con base a una inspección gráfica se puede determinar que a través de los años se mantienen los mismos sectores empresariales registrados en el CIIU con mayor número de datos faltantes para la cobertura de dividendos. Lo que podría significar o falta de capital para la repartición de los mismos u otro tipo de factores los cuales se analizarán más adelante.</p>
+<p>Con respecto a cualquier proceso de imputación de datos para la variable no se considera pertinente hacerlo ya que es un índice extraído de factores financierops y reportes internos de las empresas. Por tanto se podría evaluar alternativas de calculos indirectos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupar por sector (CIIU) y año para contar los datos faltantes en CoberturaDividendos</span>
+<span class="n">faltantes_por_sector_año</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">])[</span><span class="s1">&#39;CoberturaDividendos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Cambiar el nombre de las columnas para reflejar los datos faltantes</span>
+<span class="n">faltantes_por_sector_año</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ordenar por la cantidad de datos faltantes</span>
+<span class="n">top_10_faltantes_por_sector</span> <span class="o">=</span> <span class="n">faltantes_por_sector_año</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CIIU&#39;</span><span class="p">)[</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Filtrar los datos originales para obtener solo los sectores del Top 10</span>
+<span class="n">top_10_sectores_faltantes</span> <span class="o">=</span> <span class="n">faltantes_por_sector_año</span><span class="p">[</span><span class="n">faltantes_por_sector_año</span><span class="p">[</span><span class="s1">&#39;CIIU&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_10_faltantes_por_sector</span><span class="p">[</span><span class="s1">&#39;CIIU&#39;</span><span class="p">])]</span>
+
+<span class="c1"># Graficar los datos faltantes por sector (Top 10) y año</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">top_10_sectores_faltantes</span><span class="p">,</span>  <span class="c1"># DataFrame con el top 10 de faltantes por sector y año</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span>  <span class="c1"># Columna de años</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">,</span>  <span class="c1"># Columna con el conteo de datos faltantes</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;CIIU&#39;</span><span class="p">,</span>  <span class="c1"># Colorear por sector (CIIU)</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 10 Sectores con Mayor Cantidad de Datos Faltantes en Cobertura de Dividendos a lo Largo de los Años&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">:</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">:</span> <span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">},</span>  <span class="c1"># Etiquetas de los ejes</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CIIU&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>  <span class="c1"># Mostrar los datos al pasar el cursor</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Datos Faltantes para Cobertura de Dividendos&#39;</span><span class="p">,</span>  <span class="c1"># Mostrar el valor directamente en las barras</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span>  <span class="c1"># Para agrupar las barras por año</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño para que sea más limpio</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Cantidad de Cobertura de Dividendos Faltantes&#39;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> 
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.15</span>  <span class="c1"># Añadir espacio entre las barras</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+</section>
+<section id="descripcion-de-variables">
+<h2>Descripción de Variables<a class="headerlink" href="#descripcion-de-variables" title="Link to this heading">#</a></h2>
+<section id="variables-categoricas">
+<h3>Variables Categóricas<a class="headerlink" href="#variables-categoricas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fecha de Corte</th>
+      <th>Razón social de la sociedad</th>
+      <th>Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)</th>
+      <th>Tipo societario</th>
+      <th>Dirección de notificación judicial registrada en Cámara de Comercio</th>
+      <th>Departamento de la dirección del domicilio</th>
+      <th>Ciudad de la dirección del domicilio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>58380</td>
+      <td>58378</td>
+      <td>58380</td>
+      <td>58380</td>
+      <td>58380</td>
+      <td>58380</td>
+      <td>58380</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>19</td>
+      <td>18408</td>
+      <td>443</td>
+      <td>8</td>
+      <td>27651</td>
+      <td>30</td>
+      <td>274</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>2017-12-31</td>
+      <td>ENERGIZAR SAS</td>
+      <td>L6810 - Actividades inmobiliarias realizadas c...</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>CR 50 E 8 SUR 63</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA D.C.</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>8340</td>
+      <td>14</td>
+      <td>9735</td>
+      <td>37394</td>
+      <td>59</td>
+      <td>27248</td>
+      <td>15476</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Frecuencia_RazonS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Frecuencia_RazonS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Razón social de la sociedad
+ENERGIZAR SAS                         14
+CLUB UNION SA                         12
+COMBUSTIBLES DEL CESAR Y CIA LTDA      9
+KENZO JEANS SAS                        8
+SERVICIOS DE INGENIERIA CIVIL S.A.     8
+                                      ..
+IINVERSIONES POU SAS                   1
+BABAYARO S.A.S.                        1
+BABAYARO S.A.S                         1
+DISEÑOS Y CONSTRUCCIONES S.A.S         1
+DISEÑOS Y CONSTRUCCIONES LTDA          1
+Name: count, Length: 18408, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seobserva que en Bogota, Antioquia, Valle, cundinamarca y Atlantico se encuentra el mayor número de Pymes a nivel nacional</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Frecuencia_dep</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Departamento de la dirección del domicilio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Frecuencia_dep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento de la dirección del domicilio
+BOGOTA D.C.                 27248
+ANTIOQUIA                    9881
+VALLE                        4879
+CUNDINAMARCA                 3749
+ATLANTICO                    2821
+SANTANDER                    1808
+BOLIVAR                      1226
+RISARALDA                     917
+CALDAS                        711
+NORTE DE SANTANDER            587
+META                          579
+MAGDALENA                     531
+TOLIMA                        506
+BOYACA                        346
+QUINDIO                       346
+HUILA                         346
+NARINO                        340
+CORDOBA                       322
+CAUCA                         280
+CESAR                         211
+SAN ANDRES Y PROVIDENCIA      203
+CASANARE                      176
+SUCRE                         153
+CAQUETA                        88
+LA GUAJIRA                     37
+PUTUMAYO                       30
+CHOCO                          21
+ARAUCA                         19
+AMAZONAS                       14
+VICHADA                         5
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordenadas_departamentos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;BOGOTA D.C.&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.60971</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.08175</span><span class="p">},</span>
+    <span class="s1">&#39;ANTIOQUIA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">6.25184</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.56359</span><span class="p">},</span>
+    <span class="s1">&#39;VALLE&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">3.45164</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.53198</span><span class="p">},</span>
+    <span class="s1">&#39;CUNDINAMARCA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.74086</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.29733</span><span class="p">},</span>
+    <span class="s1">&#39;ATLANTICO&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.96854</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.78132</span><span class="p">},</span>
+    <span class="s1">&#39;SANTANDER&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">7.12539</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.1198</span><span class="p">},</span>
+    <span class="s1">&#39;BOLIVAR&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.39972</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.51444</span><span class="p">},</span>
+    <span class="s1">&#39;RISARALDA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.81333</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.69611</span><span class="p">},</span>
+    <span class="s1">&#39;CALDAS&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">5.07028</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.51361</span><span class="p">},</span>
+    <span class="s1">&#39;NORTE DE SANTANDER&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">7.94672</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.89829</span><span class="p">},</span>
+    <span class="s1">&#39;META&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.15333</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.63584</span><span class="p">},</span>
+    <span class="s1">&#39;MAGDALENA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.24125</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.21102</span><span class="p">},</span>
+    <span class="s1">&#39;TOLIMA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.43889</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.23222</span><span class="p">},</span>
+    <span class="s1">&#39;HUILA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">2.9273</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.28189</span><span class="p">},</span>
+    <span class="s1">&#39;QUINDIO&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">4.48559</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.645</span><span class="p">},</span>
+    <span class="s1">&#39;BOYACA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">5.45451</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.362</span><span class="p">},</span>
+    <span class="s1">&#39;NARINO&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">1.20892</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">77.27721</span><span class="p">},</span>
+    <span class="s1">&#39;CORDOBA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">8.75</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.88</span><span class="p">},</span>
+    <span class="s1">&#39;CAUCA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">2.44568</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.61474</span><span class="p">},</span>
+    <span class="s1">&#39;CESAR&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.46139</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.25322</span><span class="p">},</span>
+    <span class="s1">&#39;SAN ANDRES Y PROVIDENCIA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">12.58472</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">81.70056</span><span class="p">},</span>
+    <span class="s1">&#39;CASANARE&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">5.33493</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">71.75608</span><span class="p">},</span>
+    <span class="s1">&#39;SUCRE&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">9.30472</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.39778</span><span class="p">},</span>
+    <span class="s1">&#39;CAQUETA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">0.87075</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.8419</span><span class="p">},</span>
+    <span class="s1">&#39;LA GUAJIRA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">11.54444</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.90722</span><span class="p">},</span>
+    <span class="s1">&#39;PUTUMAYO&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">0.57633</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.0647</span><span class="p">},</span>
+    <span class="s1">&#39;CHOCO&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">5.69472</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.66111</span><span class="p">},</span>
+    <span class="s1">&#39;ARAUCA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">6.5555</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">71.33217</span><span class="p">},</span>
+    <span class="s1">&#39;AMAZONAS&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.4429</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">71.57239</span><span class="p">},</span>
+    <span class="s1">&#39;VICHADA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">5.8</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">67.44</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Convertir el diccionario de coordenadas a un DataFrame</span>
+<span class="n">df_coords</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">coordenadas_departamentos</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+
+<span class="c1"># Frecuencia de empresas por departamento (datos del usuario)</span>
+<span class="n">frecuencia_empresas</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;BOGOTA D.C.&#39;</span><span class="p">:</span> <span class="mi">27248</span><span class="p">,</span> <span class="s1">&#39;ANTIOQUIA&#39;</span><span class="p">:</span> <span class="mi">9881</span><span class="p">,</span> <span class="s1">&#39;VALLE&#39;</span><span class="p">:</span> <span class="mi">4879</span><span class="p">,</span> <span class="s1">&#39;CUNDINAMARCA&#39;</span><span class="p">:</span> <span class="mi">3749</span><span class="p">,</span> <span class="s1">&#39;ATLANTICO&#39;</span><span class="p">:</span> <span class="mi">2821</span><span class="p">,</span> 
+    <span class="s1">&#39;SANTANDER&#39;</span><span class="p">:</span> <span class="mi">1808</span><span class="p">,</span> <span class="s1">&#39;BOLIVAR&#39;</span><span class="p">:</span> <span class="mi">1226</span><span class="p">,</span> <span class="s1">&#39;RISARALDA&#39;</span><span class="p">:</span> <span class="mi">917</span><span class="p">,</span> <span class="s1">&#39;CALDAS&#39;</span><span class="p">:</span> <span class="mi">711</span><span class="p">,</span> <span class="s1">&#39;NORTE DE SANTANDER&#39;</span><span class="p">:</span> <span class="mi">587</span><span class="p">,</span> 
+    <span class="s1">&#39;META&#39;</span><span class="p">:</span> <span class="mi">579</span><span class="p">,</span> <span class="s1">&#39;MAGDALENA&#39;</span><span class="p">:</span> <span class="mi">531</span><span class="p">,</span> <span class="s1">&#39;TOLIMA&#39;</span><span class="p">:</span> <span class="mi">506</span><span class="p">,</span> <span class="s1">&#39;HUILA&#39;</span><span class="p">:</span> <span class="mi">346</span><span class="p">,</span> <span class="s1">&#39;QUINDIO&#39;</span><span class="p">:</span> <span class="mi">346</span><span class="p">,</span> <span class="s1">&#39;BOYACA&#39;</span><span class="p">:</span> <span class="mi">346</span><span class="p">,</span> 
+    <span class="s1">&#39;NARINO&#39;</span><span class="p">:</span> <span class="mi">340</span><span class="p">,</span> <span class="s1">&#39;CORDOBA&#39;</span><span class="p">:</span> <span class="mi">322</span><span class="p">,</span> <span class="s1">&#39;CAUCA&#39;</span><span class="p">:</span> <span class="mi">280</span><span class="p">,</span> <span class="s1">&#39;CESAR&#39;</span><span class="p">:</span> <span class="mi">211</span><span class="p">,</span> <span class="s1">&#39;SAN ANDRES Y PROVIDENCIA&#39;</span><span class="p">:</span> <span class="mi">203</span><span class="p">,</span> 
+    <span class="s1">&#39;CASANARE&#39;</span><span class="p">:</span> <span class="mi">176</span><span class="p">,</span> <span class="s1">&#39;SUCRE&#39;</span><span class="p">:</span> <span class="mi">153</span><span class="p">,</span> <span class="s1">&#39;CAQUETA&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s1">&#39;LA GUAJIRA&#39;</span><span class="p">:</span> <span class="mi">37</span><span class="p">,</span> <span class="s1">&#39;PUTUMAYO&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;CHOCO&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> 
+    <span class="s1">&#39;ARAUCA&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;AMAZONAS&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;VICHADA&#39;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+
+<span class="c1"># Convertir el diccionario de frecuencias a un DataFrame</span>
+<span class="n">df_frecuencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">frecuencia_empresas</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">])</span>
+
+<span class="c1"># Unir ambos DataFrames (coordenadas y frecuencias)</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_frecuencia</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_coords</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Departamento&#39;</span><span class="p">)</span>
+
+<span class="c1"># Graficar un mapa de burbujas con las frecuencias de empresas por departamento</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_geo</span><span class="p">(</span><span class="n">df_final</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;Departamento&#39;</span><span class="p">,</span>
+                     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frecuencia de Empresas por Departamento en Colombia&#39;</span><span class="p">,</span>
+                     <span class="n">size_max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;south america&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar los límites del mapa a Colombia</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span>
+    <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">showcountries</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">countrycolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+    <span class="n">showsubunits</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subunitcolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Frecuencia_Ciudad</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ciudad de la dirección del domicilio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Frecuencia_Ciudad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ciudad de la dirección del domicilio
+BOGOTA D.C.                15476
+BOGOTA-D.C.-BOGOTA D.C.    10116
+MEDELLIN-ANTIOQUIA          6094
+CALI-VALLE                  3446
+BARRANQUILLA-ATLANTICO      2546
+                           ...  
+GUATICA-RISARALDA              1
+SANTA-ANA-MAGDALENA            1
+ZONA-BANANERA-MAGDALENA        1
+ZIPACON-CUNDINAMARCA           1
+CORDOBA-BOLIVAR                1
+Name: count, Length: 274, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Frecuencia_ciiu</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Frecuencia_ciiu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)
+L6810 - Actividades inmobiliarias realizadas con bienes propios o arrendados                                                                                            9735
+F4111 - Construcción de edificios residenciales                                                                                                                         2671
+F4290 - Construcción de otras obras de ingeniería civil                                                                                                                 1461
+G4731 - Comercio al por menor de combustible para automotores                                                                                                           1375
+G4663 - Comercio al por mayor de materiales de construcción, artículos de ferretería, pinturas, productos de vidrio, equipo y materiales de fontanería y calefacción    1335
+                                                                                                                                                                        ... 
+C3092 - Fabricación de bicicletas y de sillas de ruedas para personas con discapacidad                                                                                     1
+A0311 - Pesca marítima                                                                                                                                                     1
+A0170 - Caza ordinaria y mediante trampas y actividades de servicios conexas                                                                                               1
+C3313 - Mantenimiento y reparación especializado de equipo electrónico y óptico                                                                                            1
+H5011 - Transporte de pasajeros marítimo y de cabotaje                                                                                                                     1
+Name: count, Length: 443, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Frecuencia_soci</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Tipo societario&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Frecuencia_soci</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo societario
+08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS    37394
+01. SOCIEDAD ANÓNIMA                          11805
+03. SOCIEDAD LIMITADA                          5602
+05. SOCIEDAD EN COMANDITA POR ACCIONES         1570
+04. SOCIEDAD EN COMANDITA                      1020
+02. SUCURSAL EXTRANJERA                         765
+07. EMPRESA UNIPERSONAL                         215
+06. COLECTIVA                                     9
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipo_societario_labels</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;01. SOCIEDAD ANÓNIMA&#39;</span><span class="p">:</span> <span class="s1">&#39;Sociedad Anónima&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;03. SOCIEDAD LIMITADA&#39;</span><span class="p">:</span> <span class="s1">&#39;Sociedad Limitada&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;05. SOCIEDAD EN COMANDITA POR ACCIONES&#39;</span><span class="p">:</span> <span class="s1">&#39;S. Comandita por Acciones&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;04. SOCIEDAD EN COMANDITA&#39;</span><span class="p">:</span> <span class="s1">&#39;Sociedad Comandita&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;02. SUCURSAL EXTRANJERA&#39;</span><span class="p">:</span> <span class="s1">&#39;Sucursal Extranjera&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;07. EMPRESA UNIPERSONAL&#39;</span><span class="p">:</span> <span class="s1">&#39;Empresa Unipersonal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;06. COLECTIVA&#39;</span><span class="p">:</span> <span class="s1">&#39;Colectiva&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Crear una nueva columna con las etiquetas cortas</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Tipo societario&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tipo_societario_labels</span><span class="p">)</span>
+
+<span class="c1"># Contar la frecuencia de cada tipo societario</span>
+<span class="n">frecuencia_tipo_societario</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">frecuencia_tipo_societario</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">,</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">]</span>
+
+<span class="c1"># Crear el gráfico de barras interactivo con Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">frecuencia_tipo_societario</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución por Tipo Societario&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">:</span> <span class="s1">&#39;Tipo Societario&#39;</span><span class="p">,</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">:</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">},</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Tipo societario corto&#39;</span><span class="p">,</span>  <span class="c1"># Colores diferentes para cada barra</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#003366&#39;</span><span class="p">,</span> <span class="s1">&#39;#004c99&#39;</span><span class="p">,</span> <span class="s1">&#39;#007fff&#39;</span><span class="p">,</span> <span class="s1">&#39;#0066cc&#39;</span><span class="p">,</span> <span class="s1">&#39;#cce5ff&#39;</span><span class="p">,</span> <span class="s1">&#39;#99ccff&#39;</span><span class="p">,</span> <span class="s1">&#39;#99ccff&#39;</span><span class="p">,</span> <span class="s1">&#39;#003366&#39;</span><span class="p">],</span>
+             <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>  <span class="c1"># Mostrar el valor de la frecuencia directamente en la barra</span>
+
+<span class="c1"># Ajustar el diseño para hacer el gráfico más interactivo</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Tipo Societario&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_tickangle</span><span class="o">=-</span><span class="mi">25</span><span class="p">,</span>  <span class="c1"># Rotar las etiquetas del eje X</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># Ocultar la leyenda ya que no es necesaria</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico interactivo</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="inspeccion-de-prevalencias-en-empresas">
+<h3>Inspección de prevalencias en empresas<a class="headerlink" href="#inspeccion-de-prevalencias-en-empresas" title="Link to this heading">#</a></h3>
+<p>En primera instancia se observará si las empresas registradas bajo su número de identificación tributaria (NIT), el cual es único, han efectuado algún tipo de cambio sobre su razón social o dirección de locación, esta información podría ser de utilidad para reflejar si empresas con razones sociales en un inicio migraron o pivotearon hacia otro sector económico u otra locación o dirección donde poseen instalaciones más grandes (relacionado con el aumento de sus ingresos).</p>
+<p>En segunda instancia también se desea inspeccionar el conteo de empresas por sector a lo largo de los años y evaluar la relación que dicha migración de un sector a otro a tiene con el crecimiento o decrecimeinto de la empresa u otros factores.</p>
+<p>Se segurán los siguientes pasos:</p>
+<ol class="arabic simple">
+<li><p>Agrupar los datos por el identificador único de la empresa (NIT) y observar cómo cambia la razón social a lo largo de los años.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Contar cuántas razones sociales diferentes ha tenido cada NIT.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Comparar los años para detectar cambios en la razón social.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conteo de empresas unicas totales</span>
+<span class="n">NIT_unicos</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;El número de empresas con un un NIT único es: </span><span class="si">{</span><span class="n">NIT_unicos</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El número de empresas con un un NIT único es: 8340
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conteo_NIT_año</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)[</span><span class="s1">&#39;NIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+<span class="c1"># Mostrar el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conteo_NIT_año</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Año
+2017    8340
+2018    8340
+2019    8340
+2020    8340
+2021    8340
+2022    8340
+2023    8340
+Name: NIT, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se realiza la varificación de los datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analizaremos el conteo único de empresas por razón social</span>
+<span class="n">conteo_RS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">conteo_unico_RS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;El conteo de empresas por razón social es: </span><span class="si">{</span><span class="n">conteo_RS</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;El conteo de empresas unicas por razón social es: </span><span class="si">{</span><span class="n">conteo_unico_RS</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El conteo de empresas por razón social es: 58378
+El conteo de empresas unicas por razón social es: 18408
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conteo único de Razones sociales a lo largo de los años</p>
+<p>Si bien el número de veces que se cambió la razón social pudo deberse a errores de escritura en los datos o palabras mal escritas, también pudo ser causado por cambios en el nombre de la empresa, lo observaremos relacionando el sector al que pertenecen las empresas que cambiaron su razón social y su diferencia a lo largo de los años.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cambios_razon_social</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Filtrar los casos donde una empresa ha tenido más de una razón social</span>
+<span class="n">cambios_razon_social</span> <span class="o">=</span> <span class="n">cambios_razon_social</span><span class="p">[</span><span class="n">cambios_razon_social</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Mostrar las empresas que han cambiado de razón social</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empresas que cambiaron su razón social:</span><span class="se">\n</span><span class="si">{</span><span class="n">cambios_razon_social</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El conteo de empresas que cambiaron su razón social es: </span><span class="si">{</span><span class="n">cambios_razon_social</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empresas que cambiaron su razón social:
+            NIT  Razón social de la sociedad
+0     800000268                            2
+1     800000276                            2
+2     800000313                            2
+3     800000457                            2
+4     800000750                            3
+...         ...                          ...
+8333  901038787                            2
+8334  901042983                            3
+8335  901045444                            3
+8337  901103498                            4
+8338  901107672                            2
+
+[6088 rows x 2 columns]
+El conteo de empresas que cambiaron su razón social es: 6088
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Agrupar por NIT y contar las razones sociales únicas (incluyendo cambios de razón social)</span>
+<span class="n">cambios_razon_social</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar la columna para reflejar el número de razones sociales diferentes</span>
+<span class="n">cambios_razon_social</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Numero de razones sociales diferentes&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrar los casos donde una empresa ha tenido más de una razón social</span>
+<span class="n">cambios_razon_social</span> <span class="o">=</span> <span class="n">cambios_razon_social</span><span class="p">[</span><span class="n">cambios_razon_social</span><span class="p">[</span><span class="s1">&#39;Numero de razones sociales diferentes&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Contar la frecuencia de empresas que han cambiado su razón social &#39;n&#39; veces</span>
+<span class="n">frecuencia_cambios</span> <span class="o">=</span> <span class="n">cambios_razon_social</span><span class="p">[</span><span class="s1">&#39;Numero de razones sociales diferentes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar las columnas para mayor claridad</span>
+<span class="n">frecuencia_cambios</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Veces que cambiaron de razón social&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de empresas&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ordenar el resultado por la cantidad de cambios de razón social</span>
+<span class="n">frecuencia_cambios</span> <span class="o">=</span> <span class="n">frecuencia_cambios</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Veces que cambiaron de razón social&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Frecuencia de cambios de razón social por empresa:</span><span class="se">\n</span><span class="si">{</span><span class="n">frecuencia_cambios</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frecuencia de cambios de razón social por empresa:
+   Veces que cambiaron de razón social  Número de empresas
+0                                    2                3133
+1                                    3                2079
+2                                    4                 715
+3                                    5                 159
+4                                    6                   2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se realiza el conteo de cambios de un año al siguiente de nombre de la empresa o razón social y se obtiene el siguiente resultado:</p>
+<ul class="simple">
+<li><p>De 2020 a 2021 hubo el mayor número de cambio de nombre o razón social en los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>De 2018 a 2019 hubo el menos número de cambio de nombre o razón social de la empresa.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordenar los datos por NIT y Año</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">])</span>
+
+<span class="c1"># Desplazar la razón social para cada NIT un año hacia abajo (para comparar con el año anterior)</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Razón social anterior&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Identificar si hubo un cambio de razón social comparando con el año anterior</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de razón social&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Razón social anterior&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrar solo los casos donde hubo un cambio de razón social</span>
+<span class="n">cambios_razon_social</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de razón social&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Razón social anterior&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+
+<span class="c1"># Contar cuántos cambios ocurrieron por año</span>
+<span class="n">cambios_por_año</span> <span class="o">=</span> <span class="n">cambios_razon_social</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)[</span><span class="s1">&#39;NIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar las columnas para mayor claridad</span>
+<span class="n">cambios_por_año</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de cambios de razón social&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mostrar la tabla con los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cambios_por_año</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Año  Número de cambios de razón social
+0  2018                               3245
+1  2019                                 13
+2  2020                                 32
+3  2021                               4556
+4  2022                               2405
+5  2023                               2290
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es válido mencionar que del total de 6088 cambios en total que hubo a los diferentes razones sociales de las 8040 empresas estudiadas, 1038 corresponden a empresas que realizan actividades inmobiliarias, 271 a empresas de construcción de edificios residenciales, 259 a empresas de construcción de obra civil y así sucesivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupar por NIT y sector (CIIU) y contar las razones sociales únicas</span>
+<span class="n">cambios_por_sector</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">,</span> <span class="s1">&#39;NIT&#39;</span><span class="p">])[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Filtrar los casos donde se han cambiado razones sociales (más de una razón social)</span>
+<span class="n">cambios_por_sector</span> <span class="o">=</span> <span class="n">cambios_por_sector</span><span class="p">[</span><span class="n">cambios_por_sector</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Contar cuántas empresas por sector cambiaron de razón social</span>
+<span class="n">frecuencia_cambios_sector</span> <span class="o">=</span> <span class="n">cambios_por_sector</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">)[</span><span class="s1">&#39;NIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar columnas para mayor claridad</span>
+<span class="n">frecuencia_cambios_sector</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de empresas que cambiaron de razón social&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ordenar de forma descendente por el número de empresas que cambiaron de razón social y seleccionar el top 15</span>
+<span class="n">top_15_sectores</span> <span class="o">=</span> <span class="n">frecuencia_cambios_sector</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Número de empresas que cambiaron de razón social&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Graficar los cambios por sector (Top 15)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">top_15_sectores</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Número de empresas que cambiaron de razón social&#39;</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 15 Sectores con Mayor Número de Cambios de Razón Social&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Número de empresas que cambiaron de razón social&#39;</span><span class="p">:</span> <span class="s1">&#39;Número de Empresas&#39;</span><span class="p">,</span> <span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">:</span> <span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">},</span>
+             <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Número de empresas que cambiaron de razón social&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Sector (CIIU)&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Número de Empresas&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="analisis-de-cambio-por-sector">
+<h3>Análisis de cambio por sector<a class="headerlink" href="#analisis-de-cambio-por-sector" title="Link to this heading">#</a></h3>
+<p>Conteo de cambios por sector o actividad industrial CIIU</p>
+<p>Se realizará una inspección de los cambios presentados a cada NIT si migraron o no a otro sector y si podría estar relacionado con el cambio o no de su razón social o nombre. Inicialmente se relacionará el NIT único de cada empresa y contará el número de cambios que hubo de un sector industrial a otro para esa empresa única.</p>
+<p>Se evidencia que 2392 empresas a lo largo de los años cambiaron su actividad industrial, se observa lo siguiente:</p>
+<ul class="simple">
+<li><p>El mayor número de cambios de un sector a otro en las empresas se realizó de 2021 al 2022 con 926 registros.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El menor número de cambios al sector industrial de una empresa se realizó de 2022 a 2023 con 495 registros.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordenar los datos por NIT y Año para comparar los cambios de actividad industrial</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">])</span>
+
+<span class="c1"># Desplazar la actividad industrial (CIIU) un año hacia abajo para cada NIT</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Identificar si hubo un cambio de actividad industrial comparando con el año anterior</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrar los casos donde hubo un cambio de actividad industrial (excluir los primeros registros de cada NIT)</span>
+<span class="n">cambios_CIIU</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+
+<span class="c1"># Contar cuántos cambios de actividad industrial hizo cada empresa (NIT) a lo largo de los años</span>
+<span class="n">cambios_por_nit</span> <span class="o">=</span> <span class="n">cambios_CIIU</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar la columna para mayor claridad</span>
+<span class="n">cambios_por_nit</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mostrar el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cambios_por_nit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            NIT  Número de cambios de actividad industrial
+0     800000313                                          2
+1     800002609                                          2
+2     800002981                                          1
+3     800002985                                          2
+4     800003454                                          1
+...         ...                                        ...
+2387  900995611                                          1
+2388  901033073                                          1
+2389  901033282                                          1
+2390  901035348                                          1
+2391  901061715                                          2
+
+[2392 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordenar los datos por NIT y Año</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">])</span>
+
+<span class="c1"># Desplazar la actividad industrial (CIIU) un año hacia abajo para cada NIT</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Identificar si hubo un cambio de actividad industrial comparando con el año anterior</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrar solo los casos donde hubo un cambio de actividad industrial y excluyendo los primeros registros de cada NIT</span>
+<span class="n">cambios_CIIU</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+
+<span class="c1"># Contar cuántos cambios de actividad industrial ocurrieron de un año al otro</span>
+<span class="n">cambios_por_ano</span> <span class="o">=</span> <span class="n">cambios_CIIU</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar las columnas para mayor claridad</span>
+<span class="n">cambios_por_ano</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mostrar la tabla con el conteo de cambios por año</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cambios_por_ano</span><span class="p">)</span>
+
+<span class="c1"># Graficar los cambios por año (opcional)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">cambios_por_ano</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Número de Cambios de Actividad Industrial por Año&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">:</span> <span class="s1">&#39;Número de Cambios&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">},</span>
+             <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño del gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Número de Cambios&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Año  Número de cambios de actividad industrial
+0  2018                                        639
+1  2019                                        590
+2  2020                                        566
+3  2021                                        507
+4  2022                                        926
+5  2023                                        495
+</pre></div>
+</div>
+</div>
+</div>
+<p>La grafica muestra el número de cambios al sector industrical por año de las empresas, se muestra del total de cambios a los sectores industriales, cual es la frecuencia del top 5 para cada año.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordenar los datos por NIT y Año</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">])</span>
+
+<span class="c1"># Desplazar la actividad industrial (CIIU) un año hacia abajo para cada NIT</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;NIT&#39;</span><span class="p">)[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Identificar si hubo un cambio de actividad industrial comparando con el año anterior</span>
+<span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrar solo los casos donde hubo un cambio de actividad industrial y excluyendo los primeros registros de cada NIT</span>
+<span class="n">cambios_CIIU</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="p">[</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">data_sorted</span><span class="p">[</span><span class="s1">&#39;CIIU_anterior&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+
+<span class="c1"># Agrupar por Año y CIIU para contar cuántos cambios de actividad industrial ocurrieron en cada CIIU y cada año</span>
+<span class="n">cambios_por_ano_ciiu</span> <span class="o">=</span> <span class="n">cambios_CIIU</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">])[</span><span class="s1">&#39;Cambio de CIIU&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Renombrar las columnas para mayor claridad</span>
+<span class="n">cambios_por_ano_ciiu</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">]</span>
+
+<span class="c1"># Seleccionar el top 5 de sectores por año</span>
+<span class="n">cambios_por_ano_ciiu</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cambios_por_ano_ciiu</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">)[</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">top_5_por_ano</span> <span class="o">=</span> <span class="n">cambios_por_ano_ciiu</span><span class="p">[</span><span class="n">cambios_por_ano_ciiu</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Graficar los cambios por año y CIIU (top 5 sectores por año)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">top_5_por_ano</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;CIIU&#39;</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 5 Sectores con Cambios de Actividad Industrial por Año&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">:</span> <span class="s1">&#39;Número de Cambios&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">:</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">},</span>
+             <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Número de cambios de actividad industrial&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el diseño del gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Número de Cambios&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;stack&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rotar las etiquetas del eje X para que no se amontonen</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="c1"># Eliminar la leyenda</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="verificamos-la-correlacion-categorica">
+<h3>Verificamos la correlación categórica<a class="headerlink" href="#verificamos-la-correlacion-categorica" title="Link to this heading">#</a></h3>
+<p>CIIU vs Razón social</p>
+<p>Se verificará si hay algún tipo de relación entre el tipo de sector industrial al que pertenece la empresa y su razón social, para establecer dependencia en cuanto al cambio de nombre y migración del sector industrial mediante su CIIU.</p>
+<p>Dado que p-value &lt; alfa se rechaza la hipótesis nula, por tanto, y dado un estadístico chi-cuadrado =  20479319.30 elevado, se concluye que si hay relación entre el cambio de razón social o nombre de la empresa y el sector al que pertenece, es decir si su sector de actividad industrial (CIIU) es muy probable que su razón social también y viceversa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear la tabla de contingencia entre &#39;Clasificación Industrial Internacional Uniforme (CIIU)&#39; y &#39;Razón social de la sociedad&#39;</span>
+<span class="n">tabla_contingencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)&#39;</span><span class="p">],</span> 
+                                 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Razón social de la sociedad&#39;</span><span class="p">])</span>
+
+<span class="c1"># Aplicar la prueba Chi-cuadrado de independencia</span>
+<span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">tabla_contingencia</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Chi-cuadrado: </span><span class="si">{</span><span class="n">chi2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grados de libertad: </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor p: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación del valor p</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Existe una relación significativa entre la Clasificación Industrial (CIIU) y la Razón Social.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No hay evidencia suficiente para afirmar que existe una relación significativa entre la Clasificación Industrial (CIIU) y la Razón Social.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estadístico Chi-cuadrado: 20479319.309823897
+Grados de libertad: 8135894
+Valor p: 0.0
+Existe una relación significativa entre la Clasificación Industrial (CIIU) y la Razón Social.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variables-numericas">
+<h3>Variables Númericas<a class="headerlink" href="#variables-numericas" title="Link to this heading">#</a></h3>
+<p>Realizaremos un resumen estadístico de las 28 variables numéricas del conjunto de datos, se presenta a continuación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIT</th>
+      <th>IPC</th>
+      <th>PIB</th>
+      <th>DESEMPLEO</th>
+      <th>Flujo de Caja Operativo</th>
+      <th>CAPEX</th>
+      <th>Flujo de Caja Libre (FLC)</th>
+      <th>Razón Corriente</th>
+      <th>Rotación Inventario Producto Terminado (días)</th>
+      <th>Rotacion Cartera Dias</th>
+      <th>...</th>
+      <th>ROE</th>
+      <th>RAAI</th>
+      <th>RAP</th>
+      <th>NivelEndeudamiento</th>
+      <th>CoberturaIntereses</th>
+      <th>ServicioDeuda</th>
+      <th>FLC</th>
+      <th>CoberturaServicioDeuda</th>
+      <th>FDC</th>
+      <th>CoberturaDividendos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.838000e+04</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>...</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>58380.000000</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.838000e+04</td>
+      <td>5.259000e+04</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>8.575060e+08</td>
+      <td>5.678997</td>
+      <td>185579.626773</td>
+      <td>1767.105621</td>
+      <td>1.555504e+05</td>
+      <td>1.830967e+05</td>
+      <td>1.580616e+04</td>
+      <td>1.705157e+02</td>
+      <td>7.480611e+04</td>
+      <td>4.485285e+04</td>
+      <td>...</td>
+      <td>6.073538</td>
+      <td>2.650016</td>
+      <td>3.546782</td>
+      <td>47.214488</td>
+      <td>128.298312</td>
+      <td>1.432055e+04</td>
+      <td>1.374092e+07</td>
+      <td>1.966728e+04</td>
+      <td>1.016494e+06</td>
+      <td>2.180700e+03</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.109129e+07</td>
+      <td>5.167652</td>
+      <td>83079.424174</td>
+      <td>1214.988135</td>
+      <td>1.712973e+07</td>
+      <td>2.115799e+06</td>
+      <td>1.515601e+06</td>
+      <td>2.044470e+04</td>
+      <td>1.772642e+07</td>
+      <td>7.271352e+06</td>
+      <td>...</td>
+      <td>353.115770</td>
+      <td>15.430500</td>
+      <td>131.406176</td>
+      <td>389.626614</td>
+      <td>7719.521158</td>
+      <td>4.219283e+05</td>
+      <td>6.358237e+07</td>
+      <td>3.716743e+06</td>
+      <td>6.509009e+06</td>
+      <td>4.753444e+05</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>8.000003e+08</td>
+      <td>-19.340000</td>
+      <td>29789.000000</td>
+      <td>129.909000</td>
+      <td>-1.096031e+08</td>
+      <td>0.000000e+00</td>
+      <td>-8.868156e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>-77306.914894</td>
+      <td>-2606.692004</td>
+      <td>-27207.759113</td>
+      <td>0.000000</td>
+      <td>-1087.555066</td>
+      <td>0.000000e+00</td>
+      <td>-9.471775e+07</td>
+      <td>-4.444323e+03</td>
+      <td>-8.800931e+07</td>
+      <td>-7.269405e+01</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>8.110424e+08</td>
+      <td>3.000000</td>
+      <td>110157.000000</td>
+      <td>788.599500</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.217876e+00</td>
+      <td>0.000000e+00</td>
+      <td>5.624618e-01</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.267419</td>
+      <td>22.531749</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>3.322306e+06</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8.604034e+08</td>
+      <td>4.800000</td>
+      <td>186809.000000</td>
+      <td>1675.245000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.920533e+00</td>
+      <td>1.818803e+01</td>
+      <td>7.061216e+01</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.750197</td>
+      <td>44.154144</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>7.039944e+06</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.002065e+08</td>
+      <td>7.690000</td>
+      <td>242115.000000</td>
+      <td>3160.650000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>3.857264e+00</td>
+      <td>9.961966e+01</td>
+      <td>1.664808e+02</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.741708</td>
+      <td>64.837107</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>1.398798e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9.011395e+08</td>
+      <td>55.000000</td>
+      <td>316970.400000</td>
+      <td>3653.521000</td>
+      <td>4.117780e+09</td>
+      <td>3.230217e+08</td>
+      <td>8.231374e+07</td>
+      <td>4.074378e+06</td>
+      <td>4.283006e+09</td>
+      <td>1.613495e+09</td>
+      <td>...</td>
+      <td>33521.873819</td>
+      <td>379.186476</td>
+      <td>7190.314309</td>
+      <td>90455.716987</td>
+      <td>747945.200000</td>
+      <td>4.879587e+07</td>
+      <td>1.395865e+10</td>
+      <td>8.873341e+08</td>
+      <td>3.047589e+08</td>
+      <td>1.090055e+08</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 28 columns</p>
+</div></div></div>
+</div>
+<p>Variables macroeconómicas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> 
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PIB&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#858ae3&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma PIB&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;DESEMPLEO&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de DESEMPLEO&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;IPC&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#1e85ae&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de IPC&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/0dbde14e4932a90e896f875b419b03928f7154cf70681fa874e4239f823fb842.png"><img alt="_images/0dbde14e4932a90e896f875b419b03928f7154cf70681fa874e4239f823fb842.png" src="_images/0dbde14e4932a90e896f875b419b03928f7154cf70681fa874e4239f823fb842.png" style="width: 1189px; height: 990px;" /></a>
+</div>
+</div>
+<p>Distribución de las variables macroeconómicas por año</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear el gráfico de cajas y bigotes para PIB por año</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PIB&#39;</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Diagrama de Cajas y Bigotes de PIB por Año&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;PIB&#39;</span><span class="p">:</span> <span class="s1">&#39;PIB&#39;</span><span class="p">})</span>
+
+<span class="c1"># Mostrar el gráfico interactivo</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Índices de Precios del Consumidor</p>
+<ul class="simple">
+<li><p>En años como 2020 y 2018, los violines son bastante simétricos, lo que indica que los valores están distribuidos de manera uniforme en torno a la mediana.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En 2023 y 2017, sin embargo, los violines parecen estar sesgados, con algunos datos extremos. Esto sugiere la presencia de valores atípicos o que los datos tienen un sesgo hacia uno de los extremos (hacia valores más altos en 2023 y más bajos en 2017).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los valores más altos en 2023 y más bajos en 2017 podrían estar relacionados con eventos económicos específicos en esos años que impactaron el IPC.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear el gráfico de violín horizontal para IPC por año</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;IPC&#39;</span><span class="p">,</span> 
+                <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Diagrama de Violín de IPC por Año&#39;</span><span class="p">,</span>
+                <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>  <span class="c1"># Configurar orientación horizontal</span>
+                <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;IPC&#39;</span><span class="p">:</span> <span class="s1">&#39;IPC&#39;</span><span class="p">})</span>
+
+<span class="c1"># Mostrar el gráfico interactivo</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="analisis-de-asimetria-y-curtosis">
+<h3>Análisis de asimetría y curtosis<a class="headerlink" href="#analisis-de-asimetria-y-curtosis" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Platicúrtica (Colas delgadas, menos outliers): Curtosis &lt; 3</p></li>
+<li><p>Mesocúrtica (Distribución normal, colas moderadas: Curtosis igual o cercana a 3.</p></li>
+<li><p>Leptocúrtica (Colas extremadamente pesadas, muchos outliers: Curtosis &gt; 3</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">skew</span><span class="p">,</span> <span class="n">kurtosis</span>
+
+<span class="n">numericas</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calcular la simetría (skewness) y curtosis para cada variable numérica</span>
+<span class="n">resultados</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Simetría&#39;</span><span class="p">:</span> <span class="n">numericas</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">skew</span><span class="p">),</span>
+    <span class="s1">&#39;Curtosis&#39;</span><span class="p">:</span> <span class="n">numericas</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">kurtosis</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># Clasificar la curtosis en Platicúrtica, Mesocúrtica y Leptocúrtica</span>
+<span class="k">def</span> <span class="nf">clasificar_curtosis</span><span class="p">(</span><span class="n">kurtosis_value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">kurtosis_value</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Platicúrtica (Colas delgadas)&#39;</span>
+    <span class="k">elif</span> <span class="n">kurtosis_value</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Mesocúrtica (Distribución normal)&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Leptocúrtica (Colas pesadas)&#39;</span>
+
+<span class="c1"># Clasificar la simetría en derecha, izquierda o simétrica</span>
+<span class="k">def</span> <span class="nf">clasificar_simetria</span><span class="p">(</span><span class="n">skewness_value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">skewness_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Simetría a la derecha&#39;</span>
+    <span class="k">elif</span> <span class="n">skewness_value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Simetría a la izquierda&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Simetría perfecta&#39;</span>
+
+<span class="c1"># Aplicar las clasificaciones de simetría y curtosis</span>
+<span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;Clasificación Curtosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;Curtosis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clasificar_curtosis</span><span class="p">)</span>
+<span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;Clasificación Simetría&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;Simetría&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clasificar_simetria</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la tabla con los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                 Simetría      Curtosis  \
+NIT                                             -0.219858     -1.659381   
+IPC                                              1.400610      6.027205   
+PIB                                             -0.059297     -1.084541   
+DESEMPLEO                                        0.024010     -1.495466   
+Flujo de Caja Operativo                        237.931374  57189.205207   
+CAPEX                                           77.963165  10146.361320   
+Flujo de Caja Libre (FLC)                        8.661120    965.239222   
+Razón Corriente                                174.293478  32004.255931   
+Rotación Inventario Producto Terminado (días)  241.605973  58372.627439   
+Rotacion Cartera Dias                          201.790918  42910.746433   
+KTNO                                          -208.983366  48046.220911   
+ROA                                            -79.879196  14036.641657   
+MargenAntesImpuestos                           198.794522  43368.786437   
+EBIT                                            26.056107   1209.822658   
+MargenEBIT                                     198.830824  43379.235414   
+UtilidadBruta                                  -22.297510    831.968981   
+MargenBruto                                     15.206415   1734.171363   
+RotacionActivoTotal                              4.394572     52.318672   
+ROE                                           -165.093385  40752.581475   
+RAAI                                           -79.879196  14036.641657   
+RAP                                           -145.320332  31840.811649   
+NivelEndeudamiento                             218.611006  49952.397245   
+CoberturaIntereses                              78.164889   6507.411166   
+ServicioDeuda                                   68.674961   6343.209106   
+FLC                                            181.419630  39635.816505   
+CoberturaServicioDeuda                         233.762926  55662.264158   
+FDC                                             15.574413    375.291929   
+CoberturaDividendos                                   NaN           NaN   
+Año                                              0.000000     -1.250000   
+
+                                                      Clasificación Curtosis  \
+NIT                                            Platicúrtica (Colas delgadas)   
+IPC                                             Leptocúrtica (Colas pesadas)   
+PIB                                            Platicúrtica (Colas delgadas)   
+DESEMPLEO                                      Platicúrtica (Colas delgadas)   
+Flujo de Caja Operativo                         Leptocúrtica (Colas pesadas)   
+CAPEX                                           Leptocúrtica (Colas pesadas)   
+Flujo de Caja Libre (FLC)                       Leptocúrtica (Colas pesadas)   
+Razón Corriente                                 Leptocúrtica (Colas pesadas)   
+Rotación Inventario Producto Terminado (días)   Leptocúrtica (Colas pesadas)   
+Rotacion Cartera Dias                           Leptocúrtica (Colas pesadas)   
+KTNO                                            Leptocúrtica (Colas pesadas)   
+ROA                                             Leptocúrtica (Colas pesadas)   
+MargenAntesImpuestos                            Leptocúrtica (Colas pesadas)   
+EBIT                                            Leptocúrtica (Colas pesadas)   
+MargenEBIT                                      Leptocúrtica (Colas pesadas)   
+UtilidadBruta                                   Leptocúrtica (Colas pesadas)   
+MargenBruto                                     Leptocúrtica (Colas pesadas)   
+RotacionActivoTotal                             Leptocúrtica (Colas pesadas)   
+ROE                                             Leptocúrtica (Colas pesadas)   
+RAAI                                            Leptocúrtica (Colas pesadas)   
+RAP                                             Leptocúrtica (Colas pesadas)   
+NivelEndeudamiento                              Leptocúrtica (Colas pesadas)   
+CoberturaIntereses                              Leptocúrtica (Colas pesadas)   
+ServicioDeuda                                   Leptocúrtica (Colas pesadas)   
+FLC                                             Leptocúrtica (Colas pesadas)   
+CoberturaServicioDeuda                          Leptocúrtica (Colas pesadas)   
+FDC                                             Leptocúrtica (Colas pesadas)   
+CoberturaDividendos                             Leptocúrtica (Colas pesadas)   
+Año                                            Platicúrtica (Colas delgadas)   
+
+                                                Clasificación Simetría  
+NIT                                            Simetría a la izquierda  
+IPC                                              Simetría a la derecha  
+PIB                                            Simetría a la izquierda  
+DESEMPLEO                                        Simetría a la derecha  
+Flujo de Caja Operativo                          Simetría a la derecha  
+CAPEX                                            Simetría a la derecha  
+Flujo de Caja Libre (FLC)                        Simetría a la derecha  
+Razón Corriente                                  Simetría a la derecha  
+Rotación Inventario Producto Terminado (días)    Simetría a la derecha  
+Rotacion Cartera Dias                            Simetría a la derecha  
+KTNO                                           Simetría a la izquierda  
+ROA                                            Simetría a la izquierda  
+MargenAntesImpuestos                             Simetría a la derecha  
+EBIT                                             Simetría a la derecha  
+MargenEBIT                                       Simetría a la derecha  
+UtilidadBruta                                  Simetría a la izquierda  
+MargenBruto                                      Simetría a la derecha  
+RotacionActivoTotal                              Simetría a la derecha  
+ROE                                            Simetría a la izquierda  
+RAAI                                           Simetría a la izquierda  
+RAP                                            Simetría a la izquierda  
+NivelEndeudamiento                               Simetría a la derecha  
+CoberturaIntereses                               Simetría a la derecha  
+ServicioDeuda                                    Simetría a la derecha  
+FLC                                              Simetría a la derecha  
+CoberturaServicioDeuda                           Simetría a la derecha  
+FDC                                              Simetría a la derecha  
+CoberturaDividendos                                  Simetría perfecta  
+Año                                                  Simetría perfecta  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variables-microeconomicas">
+<h3>Variables microeconómicas<a class="headerlink" href="#variables-microeconomicas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># 2 filas y 2 columnas</span>
+
+<span class="c1"># Histograma 1</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Flujo de Caja Operativo&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de Flujo de Caja Operativo&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Histograma 2</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;CAPEX&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de CAPEX&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Histograma 3</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ROA&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de ROA&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Histograma 4</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;UtilidadBruta&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Histograma de Utilidad Bruta&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el espaciado entre los gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/d40a4844cff11ee09e1e7d4a21dc42d3b6704f79a79fe51573e03596e02b9402.png"><img alt="_images/d40a4844cff11ee09e1e7d4a21dc42d3b6704f79a79fe51573e03596e02b9402.png" src="_images/d40a4844cff11ee09e1e7d4a21dc42d3b6704f79a79fe51573e03596e02b9402.png" style="width: 1189px; height: 990px;" /></a>
+</div>
+</div>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=2d476bef-207a-4bed-a270-37306c226df0' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-los-datos-de-pymes-superintendencia">Análisis Exploratorio de los Datos de Pymes Superintendencia</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelly-johana-beltran-henry-d-saenz-valverde">Kelly Johana Beltrán - Henry D. Saenz Valverde</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto-y-contextualizacion">Objetivo del proyecto y contextualización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-conjunto-de-datos">Librerías y Conjunto de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-faltantes">Análisis de datos faltantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccionamos-nuestra-variable-cobertura-de-dividendos">Inspeccionamos nuestra variable Cobertura de Dividendos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-variables">Descripción de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-categoricas">Variables Categóricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccion-de-prevalencias-en-empresas">Inspección de prevalencias en empresas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-cambio-por-sector">Análisis de cambio por sector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificamos-la-correlacion-categorica">Verificamos la correlación categórica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables Númericas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-asimetria-y-curtosis">Análisis de asimetría y curtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-microeconomicas">Variables microeconómicas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kelly Beltran y Henry Saenz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
